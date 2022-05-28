@@ -4,8 +4,10 @@
 //importing
 const express = require("express");
 
-// const routes = require("./routes");
-// const sequelize = require("./config/connection");
+const routes = require("./routes");
+const connection = require("./config/connection");
+
+require("dotenv").config();
 
 // instantuate app and get port
 const app = express();
@@ -16,16 +18,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // use routes for directing web flow
-// app.use(routes);
+app.use(routes);
 
 // any other route
-// app.use((req, res) => {
-//   res.status(404).end();
-// });
+app.use((req, res) => {
+  res.status(404).end();
+});
 
 // force true means, if there area any changes, update and re-run database changes.
-// sequelize.sync({ force: false }).then(() => {
-app.listen(PORT, () => {
-  console.log(`Backend Server Live on ${PORT}`);
+connection.sync({ force: true }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Backend Server Live on ${PORT}`);
+  });
 });
-// });

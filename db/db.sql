@@ -1,6 +1,9 @@
 /* delete if you found database */
-DROP DATABASE IF EXISTS JackedBoxDB;
+DROP DATABASE IF EXISTS jackedboxdb;
 /* create new one */
-CREATE DATABASE JackedBoxDB;
-/* use database */
-USE JackedBoxDB;
+CREATE DATABASE jackedboxdb;
+
+
+
+
+
