@@ -80,6 +80,7 @@ router.put("/:id", (req, res) => {
         err,
         "There was an error in PUT METHOD updating a user, Try again"
       );
+      res.status(500).json(err);
     });
 });
 

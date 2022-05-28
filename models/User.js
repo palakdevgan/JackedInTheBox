@@ -39,6 +39,7 @@ User.init(
       },
     },
     // workoutype: is the user a runner, bodybuilder, crossfit, calithetics,
+    // we want at least 1, but preferrable 2!
     workoutType: {
       type: DataTypes.STRING,
       allowNull: false,

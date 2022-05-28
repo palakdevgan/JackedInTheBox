@@ -17,7 +17,8 @@ const PORT = process.env.PORT || 3001;
 // middle ware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "assets")));
+// allows you to save/configure style sheet/ javascript
+app.use(express.static(path.join(__dirname, "public")));
 
 // use routes for directing web flow
 app.use(routes);
