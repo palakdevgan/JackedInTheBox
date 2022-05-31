@@ -39,12 +39,17 @@ header h1 {
 
 .form-label{
     color: #ffffff;
+    display:inline-block;
 }
 
-.userphoto{
+.userphoto,.userinput{
     text-align: center;
 }
 
 .form-control{
     display:inline-block;
 }
+
+.add , .remove{
+    cursor: pointer;
+    }

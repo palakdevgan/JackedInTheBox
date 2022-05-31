@@ -22,5 +22,21 @@
                 </form>
             </div>
         </div>
+        <div class="p-2 border border-white userinput">
+            <form>
+                <label class="form-label">Chest, Shoulders, Triceps</label>
+                <input type="text" id="input1">
+                <input type="text" id="input2">
+                <span class="fa fa-plus add"></span>
+                <span class="fa fa-minus remove"></span>
+                <div id="new_input"></div>
+                <input type="hidden" value="1" id="total_input1">
+                <input type="hidden" value="1" id="total_input2">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div> <button type="button" class="btn btn-primary">Previous Workouts</button></div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/javascript/add-fields.js"></script>
