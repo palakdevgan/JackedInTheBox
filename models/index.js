@@ -1,8 +1,13 @@
 const User = require("./User");
 const Workout = require("./Workout");
 
-// todo relationships between models!
-// todo user has many workouts
-// todo workouts has/belong to one user
+// todo check relationship of User/Workout
+User.hasMany(Workout, {
+  foreignKey: "user_id",
+});
+
+Workout.belongsTo(User, {
+  foreignKey: "user_id",
+});
 
 module.exports = { User, Workout };

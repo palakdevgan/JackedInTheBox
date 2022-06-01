@@ -11,26 +11,20 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isName: true,
-        len: [3],
-      },
     },
+
     date: {
       type: DataTypes.DATE,
       allowNull: false,
-      validate: {
-        isDate: true,
-      },
     },
     goal: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isGoal: true,
         len: [5],
       },
     },
@@ -38,7 +32,6 @@ Workout.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isSequence: true,
         len: [10],
       },
     },
@@ -58,14 +51,22 @@ Workout.init(
         len: [5],
       },
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
   },
   {
     sequelize: connection,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "workout",
+    modelName: "workouts",
   }
 );
 
-module.exports = Model;
+module.exports = Workout;
