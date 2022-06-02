@@ -43,14 +43,7 @@ Workout.init(
       },
     },
     // !match some of these with API!
-    // weights, body weightm kettle bell, DUMBBELL VS BAR, WEIGHTED BALL, JUMP ROPE
-    // equipment: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   validate: {
-    //     len: [5],
-    //   },
-    // },
+
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

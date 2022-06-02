@@ -14,12 +14,12 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const exphbs = require('express-handlebars');
-const helpers = require('./utils/helpers');
-const hbs = exphbs.create({helpers});
+const exphbs = require("express-handlebars");
+const helpers = require("./utils/helpers");
+const hbs = exphbs.create({ helpers });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 // middle ware
 app.use(express.json());

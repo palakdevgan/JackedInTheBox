@@ -1,5 +1,5 @@
-var gifButton = $("#btnGifSubmit");
-var searchedMuscle = $("#searchMuscle");
+var gifButton = $("#gifButton");
+var searchedMuscle = $("#searchedMuscle");
 var muscleGroupsArr = [
   "abductors",
   "abs",
