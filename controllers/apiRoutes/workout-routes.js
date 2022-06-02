@@ -14,6 +14,24 @@ router.get("/", (req, res) => {
       );
     });
 });
+router.get("/", (req, res) => {
+  Workout.findAll({
+    order: [["date", "DESC"]],
+    limit: 2,
+  })
+    .then((dbWorkoutData) => {
+      const workouts = dbWorkoutData.map((workout) =>
+        workout.get({ plain: true })
+      );
+      res.render("homepage", { workouts, loggedIn: true });
+    })
+    .catch((err) => {
+      console.log(
+        err,
+        "There was a problem with getting workout by date.. Try again!"
+      );
+    });
+});
 
 // GET WORKOUT BY ID, similar to SELECT * FROM workouts, where id = ?
 router.get("/:id", (req, res) => {
@@ -47,7 +65,7 @@ router.post("/", (req, res) => {
     goal: req.body.goal,
     sequence: req.body.sequence,
     muscleGroup: req.body.musclegrp,
-    user_id: req.body.user_id
+    user_id: req.body.user_id,
     // equipment: req.body.equipment,
   })
     .then((workoutData) => {
