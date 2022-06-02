@@ -5,7 +5,7 @@
 const express = require("express");
 const path = require("path");
 
-const routes = require("./routes");
+const routes = require("./controllers");
 const connection = require("./config/connection");
 
 require("dotenv").config();
@@ -13,6 +13,12 @@ require("dotenv").config();
 // instantuate app and get port
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // middle ware
 app.use(express.json());
@@ -29,7 +35,7 @@ app.use((req, res) => {
 });
 
 // force true means, if there area any changes, update and re-run database changes.
-connection.sync({ force: true }).then(() => {
+connection.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Backend Server Live on ${PORT}`);
   });

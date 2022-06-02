@@ -1,14 +1,10 @@
 body {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-
-  
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .userInputs {
-    border-style: groove;
-    border-color: black;
+  border-style: groove;
+  border-color: black;
 }
-
-

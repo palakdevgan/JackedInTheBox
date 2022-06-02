@@ -43,11 +43,11 @@ router.post("/", (req, res) => {
   // expect name, date, goal, sequence, muscleGroup, equipment
   Workout.create({
     name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    workoutType: req.body.workoutType,
-    weight: req.body.weight,
-    height: req.body.height,
+    date: req.body.date,
+    goal: req.body.goal,
+    sequence: req.body.sequence,
+    muscleGroup: req.body.muscleGroup,
+    equipment: req.body.equipment,
   })
     .then((workoutData) => {
       res.json(workoutData);
