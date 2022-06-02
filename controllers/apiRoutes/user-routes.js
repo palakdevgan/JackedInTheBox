@@ -48,9 +48,10 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    workoutType: req.body.workoutType,
-    weight: req.body.weight,
-    height: req.body.height,
+    // ! MVP username, email, password!
+    // workoutType: req.body.workoutType,
+    // weight: req.body.weight,
+    // height: req.body.height,
   })
     .then((userData) => res.json(userData))
     .catch((err) => {
