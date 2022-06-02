@@ -46,8 +46,9 @@ router.post("/", (req, res) => {
     date: req.body.date,
     goal: req.body.goal,
     sequence: req.body.sequence,
-    muscleGroup: req.body.muscleGroup,
-    equipment: req.body.equipment,
+    muscleGroup: req.body.musclegrp,
+    user_id: req.body.user_id
+    // equipment: req.body.equipment,
   })
     .then((workoutData) => {
       res.json(workoutData);
