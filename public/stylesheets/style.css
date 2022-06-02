@@ -79,11 +79,17 @@ body {
 
 .previousbtn:hover {
     color:#212529;
-    text-decoration: none;
 }
+
 .previousbtn {
     background-color: #E31C25;
     color: #fff;
+    text-decoration: none;
+
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 .form-control:focus {
