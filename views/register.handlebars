@@ -8,103 +8,77 @@
         </div>
       </div>
       <div class="py-5 px-3">
-        <form>
+        <form class="signup-form">
           <div class="form-row">
             <div class="col form-group">
-              <label for="firstname" class="form-label">First Name</label>
-              <input
-                type="text"
-                name="firstname"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="First Name"
-              />
+              <label for="username-signup" class="form-label">Username</label>
+              <input type="text" id="username-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Username" />
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label for="lastname" class="form-label">Last Name</label>
-              <input
-                type="text"
-                name="lastname"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Password"
-              />
+              <label for="email-signup" class="form-label">Email</label>
+              <input type="email" id="email-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Email" />
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Email"
-              />
+              <label for="password-signup" class="form-label">Password</label>
+              <input type="password" id="password-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Password" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col form-group">
+              <label for="workouttype-signup" class="form-label">Workout Type</label>
+              <input type="text" id="workouttype-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Workout Type" />
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label for="age" class="form-label">Age</label>
-              <input
-                type="text"
-                name="age"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Age"
-              />
+              <label for="weight-signup" class="form-label">Weight</label>
+              <input type="text" id="weight-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Weight in pounds" />
             </div>
-          </div>
-          <div class="form-row">
-            <div class="col form-group">
-              <label for="weight" class="form-label">Weight</label>
-              <input
-                type="text"
-                name="weight"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Weight"
-              />
-            </div>
-            <div class="col-form-group">
+            {{!-- <div class="col-form-group">
               <label for="weight" class="form-label">unit</label>
-              <select
-                class="form-control form-control-lg bg-dark text-white"
-                aria-label="select weight unit"
-              >
+              <select class="form-control form-control-lg bg-dark text-white" aria-label="select weight unit">
                 <option value="KG">KG</option>
                 <option value="Pounds">Pounds</option>
               </select>
-            </div>
+            </div> --}}
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <label for="height" class="form-label">Height</label>
-              <input
-                type="text"
-                name="height"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Height"
-              />
+              <label for="height-signup" class="form-label">Height</label>
+              <input type="text" id="height-signup" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Height in cms" />
             </div>
-            <div class="col-form-group">
+            {{!-- <div class="col-form-group">
               <label for="height" class="form-label">unit</label>
-              <select
-                class="form-control form-control-lg bg-dark text-white"
-                aria-label="select height unit"
-              >
+              <select class="form-control form-control-lg bg-dark text-white" aria-label="select height unit">
                 <option value="Feet">Feet</option>
                 <option value="CM">CM</option>
               </select>
-            </div>
+            </div> --}}
           </div>
           <div class="form-row">
             <div class="col">
-             <a class="btn btn-lg btn-block btn-dark border-light savebtn"
-                href="/login"
-              >Register</a>
+             <input
+                type="submit"
+                class="btn btn-lg btn-block btn-dark border-light savebtn"
+                value="Register"
+              />
             </div>
           </div>
         </form>
-         <p class="mt-5 text-white">Have an account already? <a href="/login">Login</a></p>
+        <p class="mt-5 text-white">Have an account already? <a href="/login">Login</a></p>
       </div>
     </div>
   </div>
 </div>
+<script src="/javascript/register.js"></script>

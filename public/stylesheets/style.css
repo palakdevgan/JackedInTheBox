@@ -9,6 +9,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald,sans-serif;
+}
+
 .logo {
     height: 200px;
     width: 150px;
@@ -99,4 +103,29 @@ a:hover{
 
   .form-group label {
       color:#fff;
+  }
+
+  .container-fluid.nav-bar {
+    position: absolute;
+    z-index: 9;
+}
+
+@media (max-width: 991.98px) {
+    .container-fluid.nav-bar {
+        position: relative;
+        background: #111111;
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link:hover,
+  .navbar-dark .navbar-nav .nav-link.active {
+    color:#E31C25;
   }

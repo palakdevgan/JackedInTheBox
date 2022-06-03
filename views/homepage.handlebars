@@ -1,6 +1,8 @@
 <div class="container">
   <div class="d-flex flex-column text-center mb-5">
-    <h2 class="display-6 font-weight-bold">Welcome User</h2>
+    {{#each workouts as |workout|}}
+    <h2 class="display-6 font-weight-bold">Welcome {{user.username}}</h2>
+      {{/each}}
   </div>
 </div>
 <div class="container-fluid position-relative bmi mb-5">

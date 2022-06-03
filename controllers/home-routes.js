@@ -1,16 +1,25 @@
 const router = require("express").Router();
 const { Workout, User } = require("../models");
 
-router.get("/", (req, res) => {
+router.get("/homepage", (req, res) => {
   Workout.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     order: [["date", "DESC"]],
     limit: 2,
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then((dbWorkoutData) => {
       const workouts = dbWorkoutData.map((workout) =>
         workout.get({ plain: true })
       );
-      res.render("homepage", { workouts, loggedIn: true });
+      res.render("homepage", { workouts, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(
@@ -20,17 +29,21 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/exercise", (req, res) => {
-  res.render("giphy");
+router.get("/", (req, res) => {
+  res.render("giphy",{loggedIn: req.session.loggedIn});
 });
 router.get("/register", (req, res) => {
   res.render("register");
 });
 router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
   res.render("login");
 });
 router.get("/previousworkouts", (req, res) => {
-  res.render("previousworkouts");
+  res.render("previousworkouts",{loggedIn: req.session.loggedIn});
 });
 
 module.exports = router;

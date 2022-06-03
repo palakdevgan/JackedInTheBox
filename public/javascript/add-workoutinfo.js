@@ -10,8 +10,7 @@ async function newFormHandler(event) {
     const goal = document.querySelector('input[name="workout-goal"]').value;
     const sequence = document.querySelector('input[name="workout-sequence"]').value;
     const musclegrp = document.querySelector('input[name="workout-musclegrp"]').value;
-    const user_id=1;
-    
+  
     const response = await fetch(`/api/workouts`, {
       method: 'POST',
       body: JSON.stringify({
@@ -19,8 +18,7 @@ async function newFormHandler(event) {
         date,
         goal,
         sequence,
-        musclegrp,
-        user_id
+        musclegrp
       }),
       headers: {
         'Content-Type': 'application/json'
