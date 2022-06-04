@@ -1,5 +1,11 @@
+//for Giphy/Exercise
 var gifButton = $("#gifButton");
 var searchedMuscle = $("#searchedMuscle");
+var exerciseName = $("#exercise-name");
+var exerciseBP = $("#exercise-bodyPart");
+var exerciseTarget = $("#exercise-target");
+var exerciseGiphy = $("#exercise-giphy");
+var exerciseEquipment = $("#exercise-equipment");
 var muscleGroupsArr = [
   "abductors",
   "abs",
@@ -51,13 +57,19 @@ gifButton.on("click", function () {
     )
       .then((response) => response.json())
       .then(function (data) {
-        console.log(data);
-        console.log(data.length, "LENGTH BRO");
+        // console.log(data);
+        // console.log(data.length, "LENGTH OF ARRAY");
 
-        var rndmExercise = Math.floor(Math.random() * data.length);
-        console.log(rndmExercise, "This is the random number");
+        var rndmNum = Math.floor(Math.random() * data.length);
 
-        console.log("Try this !!!!s", data[rndmExercise]);
+        rndmExercise = data[rndmNum];
+
+        exerciseName.text(`Exercise Name: ${rndmExercise.name}`);
+
+        exerciseBP.text(`Main body part: ${rndmExercise.bodyPart}`);
+        exerciseTarget.text(`Target muscle: ${rndmExercise.target}`);
+        exerciseEquipment.text(`Equipment: ${rndmExercise.equipment}`);
+        exerciseGiphy.attr("src", `${rndmExercise.gifUrl}`);
       })
       .catch((err) =>
         console.error(
