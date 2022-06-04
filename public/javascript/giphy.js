@@ -52,7 +52,12 @@ gifButton.on("click", function () {
       .then((response) => response.json())
       .then(function (data) {
         console.log(data);
-        console.log(data.length, "this is the length of the array");
+        console.log(data.length, "LENGTH BRO");
+
+        var rndmExercise = Math.floor(Math.random() * data.length);
+        console.log(rndmExercise, "This is the random number");
+
+        console.log("Try this !!!!s", data[rndmExercise]);
       })
       .catch((err) =>
         console.error(
