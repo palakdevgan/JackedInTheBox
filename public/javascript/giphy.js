@@ -32,7 +32,8 @@ var formButton = $("registerBtn");
 gifButton.on("click", function () {
   var userEventText = searchedMuscle.val();
   console.log(userEventText);
-  if (muscleGroupsArr.includes(userEventText)) {
+  // checking input for lowercase, user may put ABS, and it becomes invalid..
+  if (muscleGroupsArr.includes(userEventText.toLowerCase())) {
     console.log("There is a match!");
     console.log(Math.floor(Math.random() * 95));
     // run fetch call with user's input
@@ -51,6 +52,7 @@ gifButton.on("click", function () {
       .then((response) => response.json())
       .then(function (data) {
         console.log(data);
+        console.log(data.length, "this is the length of the array");
       })
       .catch((err) =>
         console.error(
@@ -59,8 +61,12 @@ gifButton.on("click", function () {
         )
       );
   } else {
-    console.log("Could not find this muscle group... Try one of the following");
-    console.log(muscleGroupsArr);
+    console.error(
+      "Could not find this muscle group... Try one of the following"
+    );
+    console.error(muscleGroupsArr);
+    alert("Could not find this muscle group... Try one of the following");
+    alert(muscleGroupsArr);
   }
 });
 
