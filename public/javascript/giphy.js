@@ -34,7 +34,7 @@ gifButton.on("click", function () {
   console.log(userEventText);
   if (muscleGroupsArr.includes(userEventText)) {
     console.log("There is a match!");
-
+    console.log(Math.floor(Math.random() * 95));
     // run fetch call with user's input
     const fetchExercises = {
       method: "GET",
