@@ -1,4 +1,5 @@
 var gifButton = $("#btnGifSubmit");
+
 // var searchedMuscle = $("#searchMuscle");
 var muscleGroupsArr = [
     "abductors",
@@ -63,9 +64,6 @@ gifButton.on("click", function() {
         console.log(muscleGroupsArr);
     }
 });
-
-
-
 
 
 // registration feeding
