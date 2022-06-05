@@ -160,11 +160,6 @@
         color: #E31C25;
     }
     
-    .footer {
-        position: fixed;
-        bottom: 0;
-    }
-    
     .bottom-buffer {
         margin-bottom: 70px;
         margin-top: 70px;

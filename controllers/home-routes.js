@@ -2,48 +2,50 @@ const router = require("express").Router();
 const { Workout, User } = require("../models");
 
 router.get("/homepage", (req, res) => {
-  Workout.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
-    order: [["date", "DESC"]],
-    limit: 2,
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then((dbWorkoutData) => {
-      const workouts = dbWorkoutData.map((workout) =>
-        workout.get({ plain: true })
-      );
-      res.render("homepage", { workouts, loggedIn: req.session.loggedIn });
-    })
-    .catch((err) => {
-      console.log(
-        err,
-        "There was a problem with getting all workouts.. Try again!"
-      );
-    });
+    Workout.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+            order: [
+                ["date", "DESC"]
+            ],
+            limit: 2,
+            include: [{
+                model: User,
+                attributes: ['username']
+            }]
+        })
+        .then((dbWorkoutData) => {
+            const workouts = dbWorkoutData.map((workout) =>
+                workout.get({ plain: true })
+            );
+
+
+            res.render("homepage", { workouts, loggedIn: req.session.loggedIn });
+        })
+        .catch((err) => {
+            console.log(
+                err,
+                "There was a problem with getting all workouts.. Try again!"
+            );
+        });
 });
 
 router.get("/", (req, res) => {
-  res.render("giphy",{loggedIn: req.session.loggedIn});
+    res.render("giphy", { loggedIn: req.session.loggedIn });
 });
 router.get("/register", (req, res) => {
-  res.render("register");
+    res.render("register");
 });
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render("login");
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render("login");
 });
 router.get("/previousworkouts", (req, res) => {
-  res.render("previousworkouts",{loggedIn: req.session.loggedIn});
+    res.render("previousworkouts", { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
