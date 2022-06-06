@@ -19,8 +19,20 @@ async function newFormHandler(event) {
         .then(function(data) {
 
             if (data.length > 0) {
-                $(".prev_workouts").show();
-                generate_table(data);
+
+                // Filter Dates between start and end dates
+                let start = new Date(fromDate);
+                let end = new Date(toDate);
+                var filtered_data = data.filter(item => {
+                    let date = new Date(item.date);
+                    return date >= start && date <= end;
+                });
+
+                // display filtered data if exists
+                if (filtered_data.length > 0) {
+                    $(".prev_workouts").show();
+                    generate_table(filtered_data);
+                }
 
             }
         });
@@ -52,9 +64,10 @@ function generate_table(data) {
 document.querySelector('.searchPrev').addEventListener('submit', newFormHandler);
 
 $(document).ready(function() {
+    //2022-06-05T00:00:00.000Z
     $('#example').DataTable({
         lengthChange: false,
-        buttons: ['copy', 'excel', 'pdf', 'colvis']
+        search: false,
     });
 
 });
