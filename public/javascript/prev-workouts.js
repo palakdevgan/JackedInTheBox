@@ -1,10 +1,10 @@
 $(".prev_workouts").hide();
 async function newFormHandler(event) {
     event.preventDefault();
-    const from_date = document.querySelector('input[name="from_date"]').value;
-    const to_date = document.querySelector('input[name="to_date"]').value;
-    var fromDate = moment(from_date).format('YYYY-MM-DD');
-    var toDate = moment(to_date).format('YYYY-MM-DD');
+    const fromDate = document.querySelector('input[name="from_date"]').value;
+    const toDate = document.querySelector('input[name="to_date"]').value;
+    //var fromDate = moment(from_date).format('YYYY-MM-DD');
+    //var toDate = moment(to_date).format('YYYY-MM-DD');
     console.log(fromDate, toDate)
     const response = await fetch(`/api/previousworkouts`, {
             method: 'POST',
@@ -23,6 +23,7 @@ async function newFormHandler(event) {
                 // Filter Dates between start and end dates
                 let start = new Date(fromDate);
                 let end = new Date(toDate);
+
                 var filtered_data = data.filter(item => {
                     let date = new Date(item.date);
                     return date >= start && date <= end;
@@ -47,7 +48,7 @@ function generate_table(data) {
     for (var i = 0; i < data.length; i++) {
         markup += `
         <tr>
-        <td>${data[i].date}</td>
+        <td><h5>${data[i].date}</h5></td>
         <td>${data[i].name}</td>
         <td>${data[i].goal}</td>
         <td>${data[i].sequence}</td>

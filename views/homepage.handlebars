@@ -2,7 +2,7 @@
   <div class="d-flex flex-column text-center mb-5">
     {{#each workouts as |workout|}}
     <h2 class="display-6 font-weight-bold">Welcome {{user.username}}</h2>
-      {{/each}}
+    {{/each}}
   </div>
 </div>
 <div class="container-fluid position-relative bmi mb-5">
@@ -19,58 +19,33 @@
         <form class="new-workout-form">
           <div class="form-row">
             <div class="col form-group">
-              <input
-                type="text"
-                name="workout-name"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Workout Name"
-              />
+              <input type="text" name="workout-name" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Workout Name" />
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <input
-                type="date"
-                name="workout-date"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Date"
-               disabled
-              />
+              <input type="date" name="workout-date" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Date" disabled />
             </div>
             <div class="col form-group">
-              <input
-                type="text"
-                name="workout-goal"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Goal"
-              />
+              <input type="text" name="workout-goal" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Goal" />
             </div>
           </div>
           <div class="form-row">
             <div class="col form-group">
-              <input
-                type="text"
-                name="workout-sequence"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Sequence"
-              />
+              <input type="text" name="workout-sequence" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Sequence" />
             </div>
             <div class="col form-group">
-              <input
-                type="text"
-                name="workout-musclegrp"
-                class="form-control form-control-lg bg-dark text-white"
-                placeholder="Muscle Group"
-              />
+              <input type="text" name="workout-musclegrp" class="form-control form-control-lg bg-dark text-white"
+                placeholder="Muscle Group" />
             </div>
           </div>
           <div class="form-row">
             <div class="col">
-              <input
-                type="submit"
-                class="btn btn-lg btn-block btn-dark border-light savebtn"
-                value="Save"
-              />
+              <input type="submit" class="btn btn-lg btn-block btn-dark border-light savebtn" value="Save" />
             </div>
           </div>
         </form>
@@ -99,7 +74,7 @@
             <th>Muscle Group</th>
           </tr>
         </thead>
-       
+
         <tbody class="text-center">
           {{#each workouts as |workout|}}
           <tr>
@@ -117,18 +92,15 @@
               <h5>{{muscleGroup}}</h5>
             </td>
           </tr>
-           {{/each}}
+          {{/each}}
         </tbody>
-         {{/if}}
+        {{/if}}
       </table>
     </div>
   </div>
 </div>
 <div class="container">
-  <a
-    href="/previousworkouts"
-    class="btn btn-lg btn-block previousbtn"
->Previous Workouts</a>
+  <a href="/previousworkouts" class="btn btn-lg btn-block previousbtn">Previous Workouts</a>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
