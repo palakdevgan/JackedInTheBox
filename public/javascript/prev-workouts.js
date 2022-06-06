@@ -69,7 +69,14 @@ $(document).ready(function() {
         lengthChange: false,
         "bPaginate": false,
         "bFilter": false,
-        "bInfo": false
+        "bInfo": false,
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
     });
 
 });
