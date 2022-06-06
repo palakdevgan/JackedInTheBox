@@ -168,3 +168,17 @@
     .exercise-container {
         padding: 18px;
     }
+    
+    .prev_workouts {
+        margin-top: 32px;
+    }
+    
+    .page-header {
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .container {
+        margin-top: 10px !important;
+    }

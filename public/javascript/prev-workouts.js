@@ -31,7 +31,7 @@ async function newFormHandler(event) {
                 // display filtered data if exists
                 if (filtered_data.length > 0) {
                     $(".prev_workouts").show();
-                    generate_table(filtered_data);
+                    setDataToTable(filtered_data)
                 }
 
             }
@@ -40,32 +40,23 @@ async function newFormHandler(event) {
 
 }
 
-
-function generate_table(data) {
-
-    var markup = ``;
-    for (var i = 0; i < data.length; i++) {
-        markup += `
-        <tr>
-        <td>${data[i].date}</td>
-        <td>${data[i].name}</td>
-        <td>${data[i].goal}</td>
-        <td>${data[i].sequence}</td>
-        <td>${data[i].muscleGroup}</td>  
-        </tr>
-        `
-    }
-
-    $('#workout_data').html(markup);
-
-}
-
-
-document.querySelector('.searchPrev').addEventListener('submit', newFormHandler);
-
-$(document).ready(function() {
+function setDataToTable(jsonData) {
 
     $('#example').DataTable({
+        pagination: "bootstrap",
+        filter: false,
+        data: jsonData,
+        "columns": [{
+                "data": "date",
+                type: 'date',
+                render: $.fn.dataTable.render.moment('YYYY-MM-DDTHH:mm:ss.SSSSSSZ', 'YYYY/MM/DD')
+            },
+            { "data": "name" },
+            { "data": "goal" },
+            { "data": "sequence" },
+            { "data": "muscleGroup" }
+
+        ],
         lengthChange: false,
         "bPaginate": false,
         "bFilter": false,
@@ -78,5 +69,6 @@ $(document).ready(function() {
             'pdfHtml5'
         ]
     });
+}
 
-});
+document.querySelector('.searchPrev').addEventListener('submit', newFormHandler);
