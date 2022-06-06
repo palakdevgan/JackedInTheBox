@@ -64,10 +64,12 @@ function generate_table(data) {
 document.querySelector('.searchPrev').addEventListener('submit', newFormHandler);
 
 $(document).ready(function() {
-    //2022-06-05T00:00:00.000Z
+
     $('#example').DataTable({
         lengthChange: false,
-        search: false,
+        "bPaginate": false,
+        "bFilter": false,
+        "bInfo": false
     });
 
 });
