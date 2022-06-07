@@ -1,8 +1,6 @@
 <div class="container">
   <div class="d-flex flex-column text-center mb-5">
-    {{#each workouts as |workout|}}
-    <h2 class="display-6 font-weight-bold">Welcome {{user.username}}</h2>
-    {{/each}}
+    <h2 class="display-6 font-weight-bold text-uppercase">Welcome {{username}}</h2>
   </div>
 </div>
 <div class="container-fluid position-relative bmi mb-5">
@@ -39,7 +37,7 @@
                 placeholder="Sequence" />
             </div>
             <div class="col form-group">
-              <input type="text" name="workout-musclegrp" class="form-control form-control-lg bg-dark text-white"
+              <input type="text" name="workout-muscleGroup" class="form-control form-control-lg bg-dark text-white"
                 placeholder="Muscle Group" />
             </div>
           </div>
@@ -104,4 +102,5 @@
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone.min.js"></script>
 <script src="/javascript/add-workoutinfo.js"></script>
