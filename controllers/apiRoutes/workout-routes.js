@@ -5,7 +5,11 @@ const { Workout, User } = require("../../models");
 // get all workouts, similar to SELECT * FROM workouts;
 
 router.get("/", (req, res) => {
-    Workout.findAll()
+    Workout.findAll({
+        order: [
+            ["date", "ASC"]
+        ]
+    })
         .then((workoutData) => res.json(workoutData))
         .catch((err) => {
             console.log(
@@ -18,10 +22,10 @@ router.get("/", (req, res) => {
 // GET WORKOUT BY ID, similar to SELECT * FROM workouts, where id = ?
 router.get("/:id", (req, res) => {
     User.findOne({
-            where: {
-                id: req.params.id,
-            },
-        })
+        where: {
+            id: req.params.id,
+        },
+    })
         .then((workoutData) => {
             if (!workoutData) {
                 res.status(404).json({
@@ -42,13 +46,13 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     // expect name, date, goal, sequence, muscleGroup, equipment
     Workout.create({
-            name: req.body.name,
-            date: req.body.date,
-            goal: req.body.goal,
-            sequence: req.body.sequence,
-            muscleGroup: req.body.musclegrp,
-            user_id: req.session.user_id,
-        })
+        name: req.body.name,
+        date: req.body.date,
+        goal: req.body.goal,
+        sequence: req.body.sequence,
+        muscleGroup: req.body.muscleGroup,
+        user_id: req.session.user_id,
+    })
         .then((workoutData) => {
             res.json(workoutData);
         })
@@ -62,10 +66,10 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
     Workout.update(req.body, {
-            where: {
-                id: req.params.id,
-            },
-        })
+        where: {
+            id: req.params.id,
+        },
+    })
         .then((workoutData) => {
             if (!workoutData) {
                 res
@@ -82,10 +86,10 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
     Workout.destroy({
-            where: {
-                id: req.params.id,
-            },
-        })
+        where: {
+            id: req.params.id,
+        },
+    })
         .then((workoutData) => {
             if (!workoutData) {
                 res
