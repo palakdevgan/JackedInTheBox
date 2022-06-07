@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 bg-secondary py-5 px-5">
+      <div class="row align-items-center">
+        <div class="pr-md-3 d-none d-md-block">
+          <h4 class="text-primary">Calculate your BMI</h4>
+        </div>
+      </div>
+      <div class="py-5 px-3">
+        <form class="bmi-form">
+          <div class="form-row">
+            <div class="col form-group">
+              <label for="from_date" class="form-label">Age</label>
+              <input
+                type="number"
+                name="age"
+                class="form-control form-control-lg bg-dark text-white"
+                placeholder="Age"
+                id="age"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label for="height" class="form-label">Height (CM)</label>
+              <input
+                type="text"
+                name="height"
+                class="form-control form-control-lg bg-primary text-white"
+                placeholder="Height"
+                id="height"
+                value="{{height}}"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <label for="to_date" class="form-label">Weight (KG)</label>
+              <input
+                type="text"
+                name="weight"
+                class="form-control form-control-lg bg-primary text-white"
+                placeholder="weight"
+                id="weight"
+                value="{{weight}}"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="submit"
+                class="btn btn-lg btn-block btn-dark border-light savebtn"
+                value="Calculate BMI"
+              />
+            </div>
+          </div>
+        </form>
+         <p class="mt-5 text-white yourBMI"></p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <table class="table table-bordered table-lg m-0 break" align="center">
+        <tbody><thead><tr><th
+                class="bg-secondary text-white text-center"
+              >Category</th>
+              <th class="bg-secondary text-white text-center">BMI range - kg/m<sup
+                >2</sup></th></tr></thead>
+          <tr><td>Severe Thinness</td><th class="cinfoBodL">&lt; 16</th></tr>
+          <tr><td>Moderate Thinness</td><th class="cinfoBodL">16 - 17</th></tr>
+          <tr><td>Mild Thinness</td><th class="cinfoBodL">17 - 18.5</th></tr>
+          <tr><td>Normal</td><th class="cinfoBodL">18.5 - 25</th></tr>
+          <tr><td>Overweight</td><th class="cinfoBodL">25 - 30</th></tr>
+          <tr><td>Obese Class I</td><th class="cinfoBodL">30 - 35</th></tr>
+          <tr><td>Obese Class II</td><th class="cinfoBodL">35 - 40</th></tr>
+          <tr><td>Obese Class III</td><th class="cinfoBodL">&gt; 40</th></tr>
+        </tbody></table>
+    </div>
+  </div>
+</div>
+{{! jquery }}
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+{{! javascript DOM  }}
+<script src="/javascript/bmi.js"></script>
