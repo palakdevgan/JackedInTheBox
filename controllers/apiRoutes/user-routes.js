@@ -49,6 +49,7 @@ router.post("/", (req, res) => {
             email: req.body.email,
             password: req.body.password,
             workoutType: req.body.workoutType,
+            age: req.body.age,
             weight: req.body.weight,
             height: req.body.height,
         })
@@ -56,6 +57,7 @@ router.post("/", (req, res) => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
                 req.session.username = dbUserData.username;
+                req.session.age = dbUserData.age;
                 req.session.weight = dbUserData.weight;
                 req.session.height = dbUserData.height;
                 req.session.loggedIn = true;
@@ -94,6 +96,7 @@ router.post('/login', (req, res) => {
             // declare session variables
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
+            req.session.age = dbUserData.age;
             req.session.weight = dbUserData.weight;
             req.session.height = dbUserData.height;
             req.session.loggedIn = true;
