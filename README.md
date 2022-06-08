@@ -33,7 +33,7 @@ https://immense-sea-90510.herokuapp.com/
 * MySQL2
 
 ## Screenshot
-![Screenshot]
+![Screenshot](https://github.com/project2bootcamp/JackedInTheBox/blob/develop/public/images/application.gif?raw=true)
 
 ## Contribution
 Made with ❤️ by Team6
