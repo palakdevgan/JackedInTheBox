@@ -12,12 +12,6 @@ Our goal was to create an activity tracker that was not overly complicated and u
 ## Current Status
 This website was designed to be demonstrated as an MVP. (Minimal Viable Product.) In the future, with more knoweldege and experience, different functionality can be added.
 
-## Challenges Faced
-Some Challenges we faced for this project include:  
-Getting our software layout to match the wireframe design  
-Finding APIs that could perform the task we desired while still being free of charge  
-Balancing our personal and work lives and still finding time to collaborate and work with one another on the project  
-
 ## How to use the project
 Our project can be accessed through the following URL  
 https://github.com/project2bootcamp/JackedInTheBox  
