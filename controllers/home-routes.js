@@ -52,7 +52,7 @@ router.get("/previousworkouts", (req, res) => {
     res.render("previousworkouts", { loggedIn: req.session.loggedIn });
 });
 
-// BMI route
+// BMI route passing user session details including weight, height and age
 router.get("/bmi", (req, res) => {
     res.render("calculateBMI", { loggedIn: req.session.loggedIn, age: req.session.age, weight: req.session.weight, height: req.session.height });
 });

@@ -10,6 +10,7 @@
         <form class="bmi-form">
           <div class="form-row">
             <div class="col form-group">
+                {{! set User age }}
               <label for="from_date" class="form-label">Age</label>
               <input
                 type="number"
@@ -23,6 +24,7 @@
           </div>
           <div class="form-row">
             <div class="col form-group">
+                {{! set User height }}
               <label for="height" class="form-label">Height (CM)</label>
               <input
                 type="text"
@@ -37,6 +39,7 @@
           <div class="form-row">
             <div class="col form-group">
               <label for="to_date" class="form-label">Weight (KG)</label>
+              {{! set User weight }}
               <input
                 type="text"
                 name="weight"
@@ -60,6 +63,7 @@
          <p class="mt-5 text-white yourBMI"></p>
       </div>
     </div>
+    {{! BMI Range Chart }}
     <div class="col-md-5">
       <table class="table table-bordered table-lg m-0 break" align="center">
         <tbody><thead><tr><th
