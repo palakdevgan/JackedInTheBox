@@ -54,6 +54,6 @@ router.get("/previousworkouts", (req, res) => {
 
 // BMI route
 router.get("/bmi", (req, res) => {
-    res.render("calculateBMI", { loggedIn: req.session.loggedIn, weight: req.session.weight, height: req.session.height });
+    res.render("calculateBMI", { loggedIn: req.session.loggedIn, age: req.session.age, weight: req.session.weight, height: req.session.height });
 });
 module.exports = router;
