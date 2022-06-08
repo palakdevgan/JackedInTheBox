@@ -5,6 +5,7 @@ const { Op } = require('sequelize');
 const startDate = new Date("2022-06-01 00:00:00");
 const endDate = new Date("2022-06-03 00:00:00");
 
+// homepage handlebar route
 router.get("/homepage", (req, res) => {
     Workout.findAll({
             where: {
@@ -35,12 +36,17 @@ router.get("/homepage", (req, res) => {
         });
 });
 
+// main start handlebar route
 router.get("/", (req, res) => {
     res.render("giphy", { loggedIn: req.session.loggedIn });
 });
+
+// register handlebar route
 router.get("/register", (req, res) => {
     res.render("register");
 });
+
+// login handlebar route
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -48,6 +54,8 @@ router.get("/login", (req, res) => {
     }
     res.render("login");
 });
+
+// route for previous workouts handlebar
 router.get("/previousworkouts", (req, res) => {
     res.render("previousworkouts", { loggedIn: req.session.loggedIn });
 });
