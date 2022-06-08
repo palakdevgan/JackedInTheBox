@@ -6,7 +6,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 35,
-        weight: 156,
+        weight: 80,
         height: 180,
     },
     {
@@ -15,7 +15,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 30,
-        weight: 156,
+        weight: 90,
         height: 180,
     },
     {
@@ -24,7 +24,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 15,
-        weight: 156,
+        weight: 100,
         height: 180,
     },
     {
@@ -33,7 +33,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 20,
-        weight: 156,
+        weight: 70,
         height: 180,
     },
     {
@@ -42,7 +42,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 25,
-        weight: 156,
+        weight: 60,
         height: 180,
     },
     {
@@ -51,7 +51,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 28,
-        weight: 156,
+        weight: 65,
         height: 180,
     },
     {
@@ -60,7 +60,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 26,
-        weight: 156,
+        weight: 80,
         height: 180,
     },
     {
@@ -69,7 +69,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 19,
-        weight: 156,
+        weight: 85,
         height: 180,
     },
     {
@@ -78,7 +78,7 @@ const userSeedData = [{
         password: "test",
         workoutType: "running",
         age: 30,
-        weight: 156,
+        weight: 95,
         height: 180,
     },
 ];
