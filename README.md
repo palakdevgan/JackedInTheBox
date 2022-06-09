@@ -35,7 +35,7 @@ https://immense-sea-90510.herokuapp.com/
 
 
 ## Screenshot
-![Screenshot](https://github.com/project2bootcamp/JackedInTheBox/blob/develop/public/images/application.gif?raw=true)
+![Screenshot](https://github.com/project2bootcamp/JackedInTheBox/blob/main/public/images/application.gif?raw=true)
 
 ## Contribution
 Made with ❤️ by Team6
