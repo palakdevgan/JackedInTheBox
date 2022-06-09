@@ -1,11 +1,14 @@
 const router = require("express").Router();
-
+const withAuth=require('../../utils/auth');
 const { Workout, User } = require("../../models");
 
 // get all workouts, similar to SELECT * FROM workouts;
 
-router.get("/", (req, res) => {
+router.get("/", withAuth,(req, res) => {
     Workout.findAll({
+        where: {
+            user_id: req.session.user_id,
+        },
         order: [
             ["date", "ASC"]
         ]
@@ -20,7 +23,7 @@ router.get("/", (req, res) => {
 });
 
 // GET WORKOUT BY ID, similar to SELECT * FROM workouts, where id = ?
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth,(req, res) => {
     User.findOne({
         where: {
             id: req.params.id,
@@ -43,7 +46,7 @@ router.get("/:id", (req, res) => {
         });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth,(req, res) => {
     // expect name, date, goal, sequence, muscleGroup, equipment
     Workout.create({
         name: req.body.name,
@@ -64,7 +67,7 @@ router.post("/", (req, res) => {
 
 
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth,(req, res) => {
     Workout.update(req.body, {
         where: {
             id: req.params.id,
@@ -84,7 +87,7 @@ router.put("/:id", (req, res) => {
         });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth,(req, res) => {
     Workout.destroy({
         where: {
             id: req.params.id,

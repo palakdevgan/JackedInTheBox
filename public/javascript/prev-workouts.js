@@ -1,3 +1,5 @@
+$(".prev_workouts").hide();
+
 $('#fromDate').change(function(){
     var fromDate = $('#fromDate').val();
     $('#toDate').prop("disabled", false);
@@ -5,8 +7,8 @@ $('#fromDate').change(function(){
  });
 
 // hide prev workouts table on first page load
-$(".prev_workouts").hide();
 async function newFormHandler(event) {
+    $(".prev_workouts").hide();
     event.preventDefault();
     // get from and to dates and format them
     const from_date = document.querySelector('input[name="from_date"]').value;

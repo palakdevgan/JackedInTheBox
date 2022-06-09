@@ -1,25 +1,22 @@
 const router = require("express").Router();
 const { Workout, User } = require("../models");
-const { Op } = require('sequelize');
-
-const startDate = new Date("2022-06-01 00:00:00");
-const endDate = new Date("2022-06-03 00:00:00");
+const withAuth =require('../utils/auth');
 
 // homepage handlebar route
-router.get("/homepage", (req, res) => {
+router.get("/homepage", withAuth,(req, res) => {
     Workout.findAll({
-            where: {
-                user_id: req.session.user_id,
-            },
-            order: [
-                ["date", "DESC"]
-            ],
-            limit: 2,
-            // include: [{
-            //     model: User,
-            //     attributes: ['username']
-            // }]
-        })
+        where: {
+            user_id: req.session.user_id,
+        },
+        order: [
+            ["date", "DESC"]
+        ],
+        limit: 2,
+        // include: [{
+        //     model: User,
+        //     attributes: ['username']
+        // }]
+    })
         .then((dbWorkoutData) => {
             const workouts = dbWorkoutData.map((workout) =>
                 workout.get({ plain: true })
@@ -56,12 +53,12 @@ router.get("/login", (req, res) => {
 });
 
 // route for previous workouts handlebar
-router.get("/previousworkouts", (req, res) => {
+router.get("/previousworkouts",withAuth, (req, res) => {
     res.render("previousworkouts", { loggedIn: req.session.loggedIn });
 });
 
 // BMI route passing user session details including weight, height and age
-router.get("/bmi", (req, res) => {
+router.get("/bmi", withAuth,(req, res) => {
     res.render("calculateBMI", { loggedIn: req.session.loggedIn, age: req.session.age, weight: req.session.weight, height: req.session.height });
 });
 module.exports = router;
