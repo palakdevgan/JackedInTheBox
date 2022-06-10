@@ -29,7 +29,7 @@ var muscleGroupsArr = [
 ];
 
 //config dotenv to allow for process.env
-require("dotenv").config();
+// require("dotenv").config();
 
 // for login Forum
 var nameOfUser = $("name");
@@ -50,7 +50,7 @@ gifButton.on("click", function () {
       method: "GET",
       headers: {
         "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-        "X-RapidAPI-Key": process.env.APITOKEN,
+        "X-RapidAPI-Key": "37f2a9a7cemsh5b611bc49e7a303p1e79e6jsn6b86cc035e5d",
       },
     };
 
