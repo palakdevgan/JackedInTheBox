@@ -1,3 +1,7 @@
+//config dotenv to allow for process.env
+// require("dotenv-webpack").config();
+console.log(process.env.APITOKEN);
+
 //for Giphy/Exercise
 var gifButton = $("#gifButton");
 var searchedMuscle = $("#searchedMuscle");
@@ -28,9 +32,6 @@ var muscleGroupsArr = [
   "upper back",
 ];
 
-//config dotenv to allow for process.env
-require("dotenv").config();
-
 // for login Forum
 var nameOfUser = $("name");
 var lastName = $("lastname");
@@ -46,6 +47,7 @@ gifButton.on("click", function () {
     console.log("There is a match!");
     console.log(Math.floor(Math.random() * 95));
     // run fetch call with user's input
+
     const fetchExercises = {
       method: "GET",
       headers: {
