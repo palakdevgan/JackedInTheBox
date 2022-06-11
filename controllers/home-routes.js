@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Workout, User } = require("../models");
 const withAuth =require('../utils/auth');
-
 // homepage handlebar route
 router.get("/homepage", withAuth,(req, res) => {
     Workout.findAll({
@@ -61,4 +60,9 @@ router.get("/previousworkouts",withAuth, (req, res) => {
 router.get("/bmi", withAuth,(req, res) => {
     res.render("calculateBMI", { loggedIn: req.session.loggedIn, age: req.session.age, weight: req.session.weight, height: req.session.height });
 });
+
+router.get("/APIKey",(req, res) => {
+    res.json(process.env.APITOKEN);
+});
+
 module.exports = router;
