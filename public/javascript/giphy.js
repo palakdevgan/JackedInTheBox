@@ -38,17 +38,18 @@ var emailOfUser = $("email");
 var formButton = $("registerBtn");
 
 fetch(`/APIKEY/`, {
-  method: 'GET',
+  method: "GET",
   headers: {
-    'Content-Type': 'application/json'
-  }
-}).then((response) => response.json())
+    "Content-Type": "application/json",
+  },
+})
+  .then((response) => response.json())
   .then(function (data) {
     const APIKEY = data;
     gifButton.on("click", function () {
       var userEventText = searchedMuscle.val();
       console.log(userEventText);
-    
+
       // checking input for lowercase, user may put ABS, and it becomes invalid..
       if (muscleGroupsArr.includes(userEventText.toLowerCase())) {
         console.log("There is a match!");
@@ -61,7 +62,7 @@ fetch(`/APIKEY/`, {
             "X-RapidAPI-Key": APIKEY,
           },
         };
-    
+
         fetch(
           `https://exercisedb.p.rapidapi.com/exercises/target/` + userEventText,
           fetchExercises
@@ -70,13 +71,13 @@ fetch(`/APIKEY/`, {
           .then(function (data) {
             // console.log(data);
             // console.log(data.length, "LENGTH OF ARRAY");
-    
+
             var rndmNum = Math.floor(Math.random() * data.length);
-    
+
             rndmExercise = data[rndmNum];
-    
+
             exerciseName.text(`Exercise Name: ${rndmExercise.name}`);
-    
+
             exerciseBP.text(`Main body part: ${rndmExercise.bodyPart}`);
             exerciseTarget.text(`Target muscle: ${rndmExercise.target}`);
             exerciseEquipment.text(`Equipment: ${rndmExercise.equipment}`);
@@ -100,7 +101,6 @@ fetch(`/APIKEY/`, {
   });
 
 // event lister for exercise + GIF
-
 
 // registration feeding
 // formButton.on("");
